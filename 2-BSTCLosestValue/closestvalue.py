@@ -23,6 +23,22 @@ def closest_helper(node,target,closest):
         return closest
     
 
+def closest_helper_recursive(node,target,closest):
+    
+    while node != None:
+
+        if abs(node.val - target) < abs(target - closest):
+            closest = node.val
+
+        if (target < node.val):
+            node = node.left
+        elif (target > node.val):
+            node = node.right
+        else:
+            break
+            
+    return closest
+
 
 
 class Node:
