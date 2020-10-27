@@ -6,7 +6,9 @@ public class BubbleSort {
     }
 
     public static int[] sort(int[] arr, boolean ascending){
-
+        // time O(n^2)
+        // stable 
+        // inplace
         if (ascending){
             return bubbleSort(arr);
         }
