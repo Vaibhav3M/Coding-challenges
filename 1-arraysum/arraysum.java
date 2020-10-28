@@ -7,7 +7,6 @@ class arraysum {
 
 public static void main(String[] args){
     
-    System.out.println("I started..!!");
     int[] arr = {3,5,-4,8,11,1,-1,-16};
     int sum = 10; //19
     one(arr,sum);
