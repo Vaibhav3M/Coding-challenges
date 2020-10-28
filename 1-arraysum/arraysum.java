@@ -3,7 +3,7 @@ import java.util.Hashtable;
 import java.util.Map;
 
 
-class ArraySum {
+class arraysum {
 
 public static void main(String[] args){
     
