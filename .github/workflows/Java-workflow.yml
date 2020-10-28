@@ -19,7 +19,7 @@ jobs:
       with:
         java-version: 1.8
 
-    - name: Build with Maven
+    - name: Run all files
       run: |
         javac */*.java
         java */*.java
