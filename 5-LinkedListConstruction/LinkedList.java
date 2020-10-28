@@ -1,7 +1,7 @@
 public class LinkedList {
 
-    Node head;
-    Node tail;
+    NodeC head;
+    NodeC tail;
 
     public LinkedList() {
         this.head = null;
@@ -9,7 +9,7 @@ public class LinkedList {
 
     }
 
-    public void setHead(Node node) {
+    public void setHead(NodeC node) {
 
         if (this.head == null) {
             this.head = node;
@@ -20,7 +20,7 @@ public class LinkedList {
 
     }
 
-    public void setTail(Node node) {
+    public void setTail(NodeC node) {
 
         if (this.tail == null) {
             this.head = node;
@@ -31,7 +31,7 @@ public class LinkedList {
 
     }
 
-    public void insertBefore(Node node, Node nodeToInsert) {
+    public void insertBefore(NodeC node, NodeC nodeToInsert) {
 
         if (nodeToInsert == this.head && nodeToInsert == this.tail) {
             return;
@@ -50,7 +50,7 @@ public class LinkedList {
 
     }
 
-    public void insertAfter(Node node, Node nodeToInsert) {
+    public void insertAfter(NodeC node, NodeC nodeToInsert) {
 
         if (nodeToInsert == this.head && nodeToInsert == this.tail) {
             return;
@@ -69,13 +69,13 @@ public class LinkedList {
 
     }
 
-    public void insertAtPosition(int position, Node nodeToInsert) {
+    public void insertAtPosition(int position, NodeC nodeToInsert) {
 
         if (position == 1) {
             this.setHead(nodeToInsert);
         }
 
-        Node node = this.head;
+        NodeC node = this.head;
         int currPosition = 1;
 
         while (node != null && position != currPosition) {
@@ -91,12 +91,12 @@ public class LinkedList {
 
     }
 
-    public void removeNodesWithValue(int value) {
+    public void removeNodeCsWithValue(int value) {
 
-        Node node = this.head;
+        NodeC node = this.head;
 
         while (node != null) {
-            Node nodeToRemove = node;
+            NodeC nodeToRemove = node;
             node = node.next;
             if (nodeToRemove.value == value) {
                 this.remove(nodeToRemove);
@@ -104,7 +104,7 @@ public class LinkedList {
         }
     }
 
-    public void remove(Node node) {
+    public void remove(NodeC node) {
 
         if (node == this.head) {
             this.head = this.head.next;
@@ -118,7 +118,7 @@ public class LinkedList {
 
     public boolean containsNodeWithValue(int value) {
 
-        Node node = this.head;
+        NodeC node = this.head;
 
         while (node != null) {
             if (node.value == value)
@@ -130,7 +130,7 @@ public class LinkedList {
 
     }
 
-    public void removeNodeBindings(Node node) {
+    public void removeNodeBindings(NodeC node) {
 
         if (node.prev != null) {
             node.prev.next = node.next;
@@ -145,13 +145,51 @@ public class LinkedList {
 
 }
 
-class Node {
+class NodeC {
     int value;
-    Node next;
-    Node prev;
+    NodeC next;
+    NodeC prev;
 
-    public Node(int value) {
+    public NodeC(int value) {
         this.value = value;
     }
 
+}
+
+class testLinkedList{
+
+
+    public static void main(String[] args){
+
+        LinkedList list = new LinkedList();
+
+        NodeC n1 = new NodeC(1);
+        NodeC n2 = new NodeC(2);
+        NodeC n3 = new NodeC(3);
+        NodeC n4 = new NodeC(4);
+        NodeC n5 = new NodeC(5);
+        NodeC n6 = new NodeC(6);
+
+        list.setHead(n1);
+        list.setTail(n6);
+
+        n1.next = n2;
+        n2.prev = n1;
+
+        n2.next = n3;
+        n3.prev = n2;
+
+        n3.next = n4;
+        n4.prev = n3;
+
+        n4.next = n5;
+        n5.prev = n4;
+
+        n5.next = n6;
+        n6.prev = n5;
+        
+
+        System.out.println(list.containsNodeWithValue(5));
+
+    }
 }
