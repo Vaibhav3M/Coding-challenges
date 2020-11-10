@@ -1,3 +1,5 @@
+package SortingAlgos;
+
 public class BubbleSort {
 
     public static int[] sort(int[] arr) {

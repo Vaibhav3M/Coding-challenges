@@ -1,3 +1,5 @@
+package SortingAlgos;
+
 public class InsertionSort {
 
     public static int[] sort(int[] arr) {

@@ -1,3 +1,5 @@
+package SortingAlgos;
+
 class SelectionSort {
 
     public static int[] sort(int[] arr) {
